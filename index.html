@@ -1,4 +1,25 @@
-<!DOCTYPE html>
+case 'spiky':
+                        ctx.fillStyle = '#8B008B';
+                        ctx.fillRect(x, y, enemy.width, enemy.height);
+                        // Draw spikes all around
+                        ctx.fillStyle = '#000';
+                        for (let i = 0; i < 4; i++) {
+                            ctx.beginPath();
+                            ctx.moveTo(x + i * 7 + 3, y);
+                            ctx.lineTo(x + i * 7 + 6, y - 5);
+                            ctx.lineTo(x + i * 7 + 9, y);
+                            ctx.fill();
+                            // Bottom spikes
+                            ctx.beginPath();
+                            ctx.moveTo(x + i * 7 + 3, y + enemy.height);
+                            ctx.lineTo(x + i * 7 + 6, y + enemy.height + 5);
+                            ctx.lineTo(x + i * 7 + 9, y + enemy.height);
+                            ctx.fill();
+                        }
+                        ctx.fillStyle = '#FF0000';
+                        ctx.fillRect(x + 8, y + 8, 3, 3);
+                        ctx.fillRect(x + 18, y + 8, 3, 3);
+                        break;<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -328,6 +349,267 @@
                     {x: 200, y: 500, type: 'fireFlower'},
                     {x: 1000, y: 150, type: '1up'}
                 ]
+            },
+            '1-4': {
+                background: '#5C94FC',
+                platforms: [
+                    {x: 0, y: 550, width: 3500, height: 50, color: '#8B4513', type: 'ground'},
+                    {x: 250, y: 480, width: 100, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 450, y: 380, width: 150, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 700, y: 280, width: 100, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 950, y: 180, width: 120, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 1200, y: 350, width: 200, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 1500, y: 250, width: 150, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 1800, y: 450, width: 100, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 2100, y: 350, width: 180, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 2400, y: 150, width: 150, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 2700, y: 300, width: 200, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 3100, y: 200, width: 120, height: 20, color: '#228B22', type: 'platform'}
+                ],
+                enemies: [
+                    {x: 300, y: 440, type: 'spiky'},
+                    {x: 500, y: 340, type: 'piranha'},
+                    {x: 750, y: 240, type: 'goomba'},
+                    {x: 1000, y: 140, type: 'koopa'},
+                    {x: 1300, y: 310, type: 'spiky'},
+                    {x: 1550, y: 210, type: 'buzzy'},
+                    {x: 1850, y: 410, type: 'piranha'},
+                    {x: 2150, y: 310, type: 'goomba'},
+                    {x: 2450, y: 110, type: 'koopa'},
+                    {x: 2750, y: 260, type: 'spiky'},
+                    {x: 3150, y: 160, type: 'buzzy'}
+                ],
+                coins: [
+                    {x: 300, y: 430}, {x: 500, y: 330}, {x: 800, y: 230}, {x: 1050, y: 130},
+                    {x: 1350, y: 300}, {x: 1600, y: 200}, {x: 1900, y: 400}, {x: 2200, y: 300},
+                    {x: 2500, y: 100}, {x: 2800, y: 250}, {x: 3200, y: 150}, {x: 600, y: 500},
+                    {x: 1100, y: 500}, {x: 1700, y: 500}, {x: 2300, y: 500}, {x: 2900, y: 500}
+                ],
+                powerUps: [
+                    {x: 800, y: 230, type: 'mushroom'},
+                    {x: 1600, y: 200, type: 'fireFlower'},
+                    {x: 2500, y: 100, type: '1up'}
+                ]
+            },
+            '1-5': {
+                background: '#2F4F4F',
+                platforms: [
+                    {x: 0, y: 550, width: 4000, height: 50, color: '#696969', type: 'ground'},
+                    {x: 150, y: 450, width: 80, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 320, y: 350, width: 80, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 490, y: 250, width: 80, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 660, y: 150, width: 80, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 900, y: 400, width: 150, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 1200, y: 300, width: 100, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 1450, y: 200, width: 120, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 1700, y: 450, width: 180, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 2000, y: 350, width: 100, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 2300, y: 250, width: 150, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 2600, y: 400, width: 120, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 2900, y: 180, width: 200, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 3300, y: 320, width: 150, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 3600, y: 150, width: 120, height: 20, color: '#A0522D', type: 'platform'}
+                ],
+                enemies: [
+                    {x: 180, y: 410, type: 'spiky'},
+                    {x: 350, y: 310, type: 'piranha'},
+                    {x: 520, y: 210, type: 'buzzy'},
+                    {x: 690, y: 110, type: 'koopa'},
+                    {x: 950, y: 360, type: 'spiky'},
+                    {x: 1230, y: 260, type: 'piranha'},
+                    {x: 1480, y: 160, type: 'goomba'},
+                    {x: 1750, y: 410, type: 'buzzy'},
+                    {x: 2030, y: 310, type: 'spiky'},
+                    {x: 2330, y: 210, type: 'koopa'},
+                    {x: 2630, y: 360, type: 'piranha'},
+                    {x: 2930, y: 140, type: 'buzzy'},
+                    {x: 3330, y: 280, type: 'spiky'},
+                    {x: 3630, y: 110, type: 'goomba'},
+                    {x: 800, y: 510, type: 'koopa'},
+                    {x: 1600, y: 510, type: 'goomba'},
+                    {x: 2500, y: 510, type: 'buzzy'},
+                    {x: 3200, y: 510, type: 'spiky'}
+                ],
+                coins: [
+                    {x: 200, y: 400}, {x: 370, y: 300}, {x: 540, y: 200}, {x: 710, y: 100},
+                    {x: 980, y: 350}, {x: 1250, y: 250}, {x: 1500, y: 150}, {x: 1780, y: 400},
+                    {x: 2050, y: 300}, {x: 2350, y: 200}, {x: 2650, y: 350}, {x: 2950, y: 130},
+                    {x: 3350, y: 270}, {x: 3650, y: 100}, {x: 500, y: 500}, {x: 1000, y: 500},
+                    {x: 1500, y: 500}, {x: 2000, y: 500}, {x: 2500, y: 500}, {x: 3000, y: 500}
+                ],
+                powerUps: [
+                    {x: 540, y: 200, type: 'mushroom'},
+                    {x: 1250, y: 250, type: 'fireFlower'},
+                    {x: 2350, y: 200, type: '1up'},
+                    {x: 3350, y: 270, type: 'fireFlower'}
+                ]
+            },
+            '1-6': {
+                background: '#5C94FC',
+                platforms: [
+                    {x: 0, y: 550, width: 4500, height: 50, color: '#8B4513', type: 'ground'},
+                    {x: 200, y: 450, width: 120, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 400, y: 350, width: 120, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 600, y: 450, width: 120, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 800, y: 250, width: 120, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 1000, y: 150, width: 120, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 1300, y: 400, width: 200, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 1600, y: 300, width: 120, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 1900, y: 200, width: 120, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 2200, y: 450, width: 150, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 2500, y: 350, width: 120, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 2800, y: 250, width: 120, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 3100, y: 400, width: 200, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 3400, y: 180, width: 120, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 3700, y: 320, width: 150, height: 20, color: '#228B22', type: 'platform'},
+                    {x: 4000, y: 150, width: 200, height: 20, color: '#228B22', type: 'platform'}
+                ],
+                enemies: [
+                    {x: 250, y: 410, type: 'goomba'},
+                    {x: 450, y: 310, type: 'spiky'},
+                    {x: 650, y: 410, type: 'piranha'},
+                    {x: 850, y: 210, type: 'koopa'},
+                    {x: 1050, y: 110, type: 'buzzy'},
+                    {x: 1350, y: 360, type: 'spiky'},
+                    {x: 1650, y: 260, type: 'piranha'},
+                    {x: 1950, y: 160, type: 'goomba'},
+                    {x: 2250, y: 410, type: 'koopa'},
+                    {x: 2550, y: 310, type: 'buzzy'},
+                    {x: 2850, y: 210, type: 'spiky'},
+                    {x: 3150, y: 360, type: 'piranha'},
+                    {x: 3450, y: 140, type: 'goomba'},
+                    {x: 3750, y: 280, type: 'koopa'},
+                    {x: 4050, y: 110, type: 'buzzy'},
+                    {x: 500, y: 510, type: 'goomba'},
+                    {x: 1100, y: 510, type: 'spiky'},
+                    {x: 1800, y: 510, type: 'koopa'},
+                    {x: 2700, y: 510, type: 'buzzy'},
+                    {x: 3600, y: 510, type: 'spiky'}
+                ],
+                coins: [
+                    {x: 270, y: 400}, {x: 470, y: 300}, {x: 670, y: 400}, {x: 870, y: 200},
+                    {x: 1070, y: 100}, {x: 1370, y: 350}, {x: 1670, y: 250}, {x: 1970, y: 150},
+                    {x: 2270, y: 400}, {x: 2570, y: 300}, {x: 2870, y: 200}, {x: 3170, y: 350},
+                    {x: 3470, y: 130}, {x: 3770, y: 270}, {x: 4070, y: 100}, {x: 700, y: 500},
+                    {x: 1200, y: 500}, {x: 1700, y: 500}, {x: 2400, y: 500}, {x: 3000, y: 500},
+                    {x: 3500, y: 500}, {x: 4100, y: 500}
+                ],
+                powerUps: [
+                    {x: 850, y: 200, type: 'mushroom'},
+                    {x: 1650, y: 250, type: 'fireFlower'},
+                    {x: 2850, y: 200, type: '1up'},
+                    {x: 3770, y: 270, type: 'fireFlower'}
+                ]
+            },
+            '1-7': {
+                background: '#2F4F4F',
+                platforms: [
+                    {x: 0, y: 550, width: 5000, height: 50, color: '#696969', type: 'ground'},
+                    {x: 100, y: 480, width: 80, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 250, y: 420, width: 80, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 400, y: 360, width: 80, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 550, y: 300, width: 80, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 700, y: 240, width: 80, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 850, y: 180, width: 80, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 1000, y: 120, width: 80, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 1200, y: 350, width: 150, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 1450, y: 250, width: 120, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 1700, y: 400, width: 180, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 2000, y: 200, width: 150, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 2300, y: 450, width: 120, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 2600, y: 150, width: 200, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 2950, y: 350, width: 150, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 3250, y: 280, width: 120, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 3500, y: 180, width: 180, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 3800, y: 420, width: 150, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 4100, y: 250, width: 200, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 4400, y: 150, width: 120, height: 20, color: '#A0522D', type: 'platform'}
+                ],
+                enemies: [
+                    {x: 130, y: 440, type: 'spiky'},
+                    {x: 280, y: 380, type: 'piranha'},
+                    {x: 430, y: 320, type: 'buzzy'},
+                    {x: 580, y: 260, type: 'spiky'},
+                    {x: 730, y: 200, type: 'piranha'},
+                    {x: 880, y: 140, type: 'koopa'},
+                    {x: 1030, y: 80, type: 'goomba'},
+                    {x: 1250, y: 310, type: 'spiky'},
+                    {x: 1480, y: 210, type: 'piranha'},
+                    {x: 1750, y: 360, type: 'buzzy'},
+                    {x: 2030, y: 160, type: 'spiky'},
+                    {x: 2330, y: 410, type: 'piranha'},
+                    {x: 2630, y: 110, type: 'koopa'},
+                    {x: 2980, y: 310, type: 'spiky'},
+                    {x: 3280, y: 240, type: 'buzzy'},
+                    {x: 3530, y: 140, type: 'piranha'},
+                    {x: 3830, y: 380, type: 'spiky'},
+                    {x: 4130, y: 210, type: 'koopa'},
+                    {x: 4430, y: 110, type: 'goomba'},
+                    {x: 300, y: 510, type: 'buzzy'},
+                    {x: 800, y: 510, type: 'spiky'},
+                    {x: 1500, y: 510, type: 'koopa'},
+                    {x: 2100, y: 510, type: 'goomba'},
+                    {x: 2700, y: 510, type: 'spiky'},
+                    {x: 3300, y: 510, type: 'buzzy'},
+                    {x: 3900, y: 510, type: 'piranha'},
+                    {x: 4500, y: 510, type: 'spiky'}
+                ],
+                coins: [
+                    {x: 150, y: 430}, {x: 300, y: 370}, {x: 450, y: 310}, {x: 600, y: 250},
+                    {x: 750, y: 190}, {x: 900, y: 130}, {x: 1050, y: 70}, {x: 1280, y: 300},
+                    {x: 1500, y: 200}, {x: 1780, y: 350}, {x: 2050, y: 150}, {x: 2350, y: 400},
+                    {x: 2650, y: 100}, {x: 3000, y: 300}, {x: 3300, y: 230}, {x: 3550, y: 130},
+                    {x: 3850, y: 370}, {x: 4150, y: 200}, {x: 4450, y: 100}, {x: 600, y: 500},
+                    {x: 1200, y: 500}, {x: 1800, y: 500}, {x: 2400, y: 500}, {x: 3000, y: 500},
+                    {x: 3600, y: 500}, {x: 4200, y: 500}
+                ],
+                powerUps: [
+                    {x: 580, y: 250, type: 'mushroom'},
+                    {x: 1250, y: 300, type: 'fireFlower'},
+                    {x: 2050, y: 150, type: '1up'},
+                    {x: 3280, y: 230, type: 'fireFlower'},
+                    {x: 4150, y: 200, type: '1up'}
+                ]
+            },
+            '1-8': { // Final Boss Level
+                background: '#8B0000',
+                platforms: [
+                    {x: 0, y: 550, width: 3000, height: 50, color: '#2F2F2F', type: 'ground'},
+                    {x: 200, y: 450, width: 100, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 400, y: 350, width: 100, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 600, y: 250, width: 100, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 800, y: 150, width: 100, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 1000, y: 400, width: 150, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 1300, y: 300, width: 100, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 1500, y: 200, width: 120, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 1800, y: 450, width: 200, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 2200, y: 350, width: 150, height: 20, color: '#A0522D', type: 'platform'},
+                    {x: 2500, y: 250, width: 100, height: 20, color: '#A0522D', type: 'platform'}
+                ],
+                enemies: [
+                    {x: 250, y: 410, type: 'spiky'},
+                    {x: 450, y: 310, type: 'piranha'},
+                    {x: 650, y: 210, type: 'buzzy'},
+                    {x: 850, y: 110, type: 'koopa'},
+                    {x: 1050, y: 360, type: 'spiky'},
+                    {x: 1350, y: 260, type: 'piranha'},
+                    {x: 1550, y: 160, type: 'goomba'},
+                    {x: 1850, y: 410, type: 'buzzy'},
+                    {x: 2250, y: 310, type: 'spiky'},
+                    {x: 2550, y: 210, type: 'koopa'},
+                    {x: 2700, y: 400, type: 'bowser', health: 15} // Harder final boss
+                ],
+                coins: [
+                    {x: 270, y: 400}, {x: 470, y: 300}, {x: 670, y: 200}, {x: 870, y: 100},
+                    {x: 1070, y: 350}, {x: 1370, y: 250}, {x: 1570, y: 150}, {x: 1870, y: 400},
+                    {x: 2270, y: 300}, {x: 2570, y: 200}, {x: 500, y: 500}, {x: 1000, y: 500},
+                    {x: 1500, y: 500}, {x: 2000, y: 500}
+                ],
+                powerUps: [
+                    {x: 150, y: 500, type: 'fireFlower'},
+                    {x: 850, y: 100, type: '1up'},
+                    {x: 1550, y: 150, type: 'fireFlower'}
+                ]
             }
         };
 
@@ -354,7 +636,10 @@
                     y: enemyData.y,
                     width: enemyData.type === 'bowser' ? 80 : 30,
                     height: enemyData.type === 'bowser' ? 80 : 30,
-                    velX: enemyData.type === 'buzzy' ? -0.5 : (enemyData.type === 'bowser' ? 0 : -1),
+                    velX: enemyData.type === 'buzzy' ? -0.5 : 
+                          enemyData.type === 'bowser' ? 0 : 
+                          enemyData.type === 'piranha' ? -0.8 :
+                          enemyData.type === 'spiky' ? -1.2 : -1,
                     type: enemyData.type,
                     alive: true,
                     animFrame: 0,
@@ -408,18 +693,16 @@
         }
 
         function startTimer() {
-            setInterval(() => {
+            const timer = setInterval(() => {
                 if (gameRunning && !gamePaused && timeLeft > 0) {
                     timeLeft--;
                     if (timeLeft <= 0) {
-                        lives--;
-                        if (lives > 0) {
-                            timeLeft = 400;
-                            respawnPlayer();
-                        } else {
-                            gameOver();
-                        }
+                        playerDeath();
                     }
+                }
+                // Clear timer if game is not running
+                if (!gameRunning) {
+                    clearInterval(timer);
                 }
             }, 1000);
         }
@@ -458,7 +741,9 @@
 
             // Jumping
             if ((keys['w'] || keys['arrowup'] || keys[' ']) && player.grounded) {
-                player.velY = -player.jumpPower;
+                // Super/Fire Mario jumps 10% higher
+                const jumpMultiplier = player.powerState === 'small' ? 1 : 1.1;
+                player.velY = -player.jumpPower * jumpMultiplier;
                 player.grounded = false;
             }
 
@@ -553,8 +838,53 @@
                 if (enemy.type === 'bowser') {
                     updateBoss(enemy);
                 } else if (enemy.type === 'piranha') {
-                    // Piranha plants don't move
+                    // Piranha plants now pace back and forth
+                    enemy.x += enemy.velX;
+                    
+                    // Reverse direction every 60 pixels or at platform edges
+                    if (!enemy.startX) enemy.startX = enemy.x; // Remember starting position
+                    if (Math.abs(enemy.x - enemy.startX) > 60) {
+                        enemy.velX *= -1;
+                    }
+                    
+                    // Check platform boundaries
+                    let onPlatform = false;
+                    platforms.forEach(platform => {
+                        if (enemy.x + enemy.width/2 >= platform.x &&
+                            enemy.x + enemy.width/2 <= platform.x + platform.width &&
+                            enemy.y + enemy.height >= platform.y &&
+                            enemy.y <= platform.y + platform.height) {
+                            onPlatform = true;
+                        }
+                    });
+                    
+                    if (!onPlatform) {
+                        enemy.velX *= -1;
+                    }
+                    
                     enemy.animFrame = Math.sin(Date.now() * 0.01) > 0 ? 1 : 0;
+                } else if (enemy.type === 'spiky') {
+                    // New spiky enemy that paces back and forth
+                    enemy.x += enemy.velX;
+                    
+                    if (!enemy.startX) enemy.startX = enemy.x;
+                    if (Math.abs(enemy.x - enemy.startX) > 80) {
+                        enemy.velX *= -1;
+                    }
+                    
+                    let onPlatform = false;
+                    platforms.forEach(platform => {
+                        if (enemy.x + enemy.width/2 >= platform.x &&
+                            enemy.x + enemy.width/2 <= platform.x + platform.width &&
+                            enemy.y + enemy.height >= platform.y &&
+                            enemy.y <= platform.y + platform.height) {
+                            onPlatform = true;
+                        }
+                    });
+                    
+                    if (!onPlatform || enemy.x <= 0 || enemy.x >= levelWidth - enemy.width) {
+                        enemy.velX *= -1;
+                    }
                 } else {
                     // Regular enemy movement
                     enemy.x += enemy.velX;
@@ -848,8 +1178,8 @@
         }
 
         function nextLevel() {
-            if (currentLevel === 3) {
-                // Next world
+            if (currentLevel === 8) {
+                // Next world (if we had more worlds)
                 currentWorld++;
                 currentLevel = 1;
                 if (currentWorld > 1) {
@@ -864,6 +1194,20 @@
             const levelKey = currentWorld + '-' + currentLevel;
             if (levels[levelKey]) {
                 currentLevelData = levels[levelKey];
+                
+                // Set level width based on level
+                switch(levelKey) {
+                    case '1-1': levelWidth = 3000; break;
+                    case '1-2': levelWidth = 3500; break;
+                    case '1-3': levelWidth = 2000; break;
+                    case '1-4': levelWidth = 3500; break;
+                    case '1-5': levelWidth = 4000; break;
+                    case '1-6': levelWidth = 4500; break;
+                    case '1-7': levelWidth = 5000; break;
+                    case '1-8': levelWidth = 3000; break;
+                    default: levelWidth = 3000; break;
+                }
+                
                 initializeLevel();
                 timeLeft = 400;
                 score += timeLeft * 10; // Bonus for remaining time
